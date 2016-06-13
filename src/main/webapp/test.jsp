@@ -5,7 +5,7 @@
     <title>Title: ${message}</title>
 </head>
 <body>
-Test
+Test forn git example
 <div>
     <form:form method="get" action="/test1">
     <table>
