@@ -5,6 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-test1 + ${message}
+test1
 </body>
 </html>

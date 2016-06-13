@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.lynas</groupId>
-    <artifactId>SpringWebMVCMaven</artifactId>
+    <groupId>com.totalizator</groupId>
+    <artifactId>Totalizator</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>war</packaging>
@@ -16,13 +16,6 @@
             <artifactId>spring-webmvc</artifactId>
             <version>4.2.6.RELEASE</version>
         </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-            <version>1.2</version>
-        </dependency>
-
     </dependencies>
 
 

@@ -5,16 +5,7 @@
     <title>Title: ${message}</title>
 </head>
 <body>
-Test forn git example
-<div>
-    <form:form method="get" action="/test1">
-    <table>
-        <tr>
-            <td><form:label path="message">Name</form:label></td>
-            <td><form:input path="message" /></td>
-        </tr>
-    </table>
-    </form:form>
+Test forn git
 </div>
 </body>
 </html>
