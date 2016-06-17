@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: SergeyD
-  Date: 25.05.2015
-  Time: 12:46
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
@@ -48,12 +41,6 @@
     <tiles:insertAttribute name="menu"/>
     <tiles:insertAttribute name="body"/>
 </div>
-<%--<footer class="footer">--%>
-<%--<div class="container">--%>
-<%--<p class="text-muted">БиоСофтТрейд, 2015</p>--%>
-<%--<a href="http://www.biosofttrade.by">www.biosofttrade.by</a>--%>
-<%--</div>--%>
-<%--</footer>--%>
 
 </body>
 </html>

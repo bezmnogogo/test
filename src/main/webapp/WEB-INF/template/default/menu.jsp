@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: SergeyD
-  Date: 25.05.2015
-  Time: 13:31
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>

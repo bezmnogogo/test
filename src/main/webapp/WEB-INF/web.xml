@@ -31,7 +31,7 @@
         <param-value>
             com.totalizator.config.AspectJConfig,
             com.totalizator.config.DatabaseConfig
-            com.totalizator.config.SpringSecurityConfig,
+            com.totalizator.config.SecurityConfig,
             com.totalizator.config.TilesConfig,
             com.totalizator.config.ValidationConfiguration,
             com.totalizator.config.WebConfig,
@@ -67,7 +67,15 @@
     </filter-mapping>
 
 
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
 
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <!--<filter>-->
     <!--<filter-name>springSecurityFilterChain</filter-name>-->
     <!--<filter-class>-->
