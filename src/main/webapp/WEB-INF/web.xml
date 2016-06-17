@@ -29,8 +29,13 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            com.totalizator.config.WebConfig,
+            com.totalizator.config.AspectJConfig,
             com.totalizator.config.DatabaseConfig
+            com.totalizator.config.SpringSecurityConfig,
+            com.totalizator.config.TilesConfig,
+            com.totalizator.config.ValidationConfiguration,
+            com.totalizator.config.WebConfig,
+            com.totalizator.config.WebSocketConfig
         </param-value>
     </context-param>
 

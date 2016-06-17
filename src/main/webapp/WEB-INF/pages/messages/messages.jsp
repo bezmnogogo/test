@@ -1,3 +1,4 @@
+<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -12,91 +13,132 @@
 </head>
 <body>
 <div class="container">
-    <div class="row">
-        <input type="text" id="messageText" />
-        <input type="button" id="addMessage" value="addMessage">
-    </div>
-    <div class="row">
-        <table id="messageTable" class="table table-hover">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Text</th>
-                <th>Del</th>
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach var="message" items="${messagesList}">
-                <tr id="row_${message.id}">
-                    <th scope="row">${message.id}</th>
-                    <td>${message.text}</td>
-                    <td><input type='button' class='delete-message' value='delete' data-messageid='${message.id}'/></td>
-                </tr>
-            </c:forEach>
-            </tbody>
-        </table>
-    </div>
 </div>
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
 
-        var baseDeleteUrl = "<c:url value="/messages/delete"/>";
-
-        $('#addMessage').click(function() {
-            var text = $('#messageText').val();
-
-            var qData = {
-                text: text
-            };
-
-            $.ajax({
-                type: 'POST',
-                url: '<c:url value="/messages/add" />',
-                contentType: 'application/json',
-                data: JSON.stringify(qData),
-                success: function(serverResult) {
-                    var cell1 = "<th scope='row'>"+ serverResult.id +"</th>";
-                    var cell2 = "<td>"+ serverResult.text +"</td>";
-
-                    var cell3 = "<td><input type='button' class='delete-message' value='delete' data-messageid="+serverResult.id+"/></td>";
-                    $('#messageTable tr:last').after("<tr id='" + serverResult.id + "'>" + cell1 + cell2 + cell3 + '</tr>');
-
-                },
-                error: function() {
-                    alert('error');
-                }
-            });
-        });
-
-        $('.delete-message').click(function() {
-
-            var messageId = $(this).data('messageid')
-
-            var qData = {
-                id: messageId
-            };
-
-            $.ajax({
-                type: 'POST',
-                url: '<c:url value="/messages/delete" />',
-                contentType: 'application/json',
-                data: JSON.stringify(qData),
-                success: function(serverResult) {
-
-                    if (serverResult === true) {
-                        var selector = 'row_' + messageId;
-                        $('#' + selector).remove();
-                    } else {
-                        alert('delete error');
-                    }
-
-                },
-                error: function() {
-                    alert('error');
-                }
-            });
-        });
-    });
-</script>
 </body>
-</html>
+</html>--%>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+
+<tiles:insertDefinition name="defaultLayout">
+    <tiles:putAttribute name="title">
+        Home
+    </tiles:putAttribute>
+
+    <tiles:putAttribute name="body">
+        <div class="row">
+            <input type="text" id="messageText" />
+            <input type="button" id="addMessage" value="addMessage">
+        </div>
+        <div class="row">
+            <table id="messageTable" class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Text</th>
+                    <th>Del</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach var="message" items="${messagesList}">
+                    <tr id="row_${message.id}">
+                        <th scope="row">${message.id}</th>
+                        <td>${message.text}</td>
+                        <td><input type='button' class='delete-message' value='delete' data-messageid='${message.id}'/></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
+    </tiles:putAttribute>
+    <tiles:putAttribute name="scripts">
+        <script type="text/javascript">
+
+            var wsUrl = "<c:url value="/ws"/>"
+
+            jQuery(document).ready(function ($) {
+
+                var baseDeleteUrl = "<c:url value="/messages/delete"/>";
+
+                $('#addMessage').click(function() {
+                    var text = $('#messageText').val();
+
+                    var qData = {
+                        text: text
+                    };
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '<c:url value="/messages/add" />',
+                        contentType: 'application/json',
+                        data: JSON.stringify(qData),
+                        success: function(serverResult) {
+                        },
+                        error: function() {
+                            alert('error');
+                        }
+                    });
+                });
+
+                function addMessageToTable(message) {
+                    var id = '#' + message.id;
+                    var table_row = $(id);
+                    if (true) {
+                        var cell1 = "<th scope='row'>" + message.id + "</th>";
+                        var cell2 = "<td>" + message.text + "</td>";
+
+                        var cell3 = "<td><input type='button' class='delete-message' value='delete' data-messageid=" + message.id + "/></td>";
+                        $('#messageTable tr:last').after("<tr id='" + message.id + "'>" + cell1 + cell2 + cell3 + '</tr>');
+                    }
+                }
+
+                $('.delete-message').click(function() {
+
+                    var messageId = $(this).data('messageid');
+
+                    var qData = {
+                        id: messageId
+                    };
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '<c:url value="/messages/delete" />',
+                        contentType: 'application/json',
+                        data: JSON.stringify(qData),
+                        success: function(serverResult) {
+
+                            if (serverResult === true) {
+                                var selector = 'row_' + messageId;
+                                $('#' + selector).remove();
+                            } else {
+                                alert('delete error');
+                            }
+
+                        },
+                        error: function() {
+                            alert('error');
+                        }
+                    });
+                });
+
+                var socket = new SockJS(wsUrl, null, {rtt: 5000});
+                var stompClient = Stomp.over(socket);
+                stompClient.connect({},
+                        function (frame) {
+                            stompClient.subscribe("/messages/addMessage", function (message) {
+                                var message = JSON.parse(message.body);
+                                alert('message add');
+                                addMessageToTable(message);
+                            });
+                        },
+                        function (jqXHR, textStatus, errorThrown) {
+                            viewModel.set('state.connectionError', 'Связь потеряна. Перезагрузите страницу (Web Socket)');
+                        }
+                );
+            });
+        </script>
+    </tiles:putAttribute>
+</tiles:insertDefinition>
