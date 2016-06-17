@@ -14,16 +14,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">PVC Line</a>
+            <a class="navbar-brand" href="#">Index</a>
         </div>
         <div id="menu" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li id="menu-monitoring"><a href="<c:url value="/" />">Мониторинг</a></li>
-                <%--<li id="menu-settings"><a href="#">Настройки</a></li>--%>
+                <li id="menu-monitoring"><a href="<c:url value="/" />">Home</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" href="#" id="menu1" data-toggle="dropdown" role="button"
                        aria-haspopup="true" aria-expanded="false">
-                        Настройки
+                        Item
                         <span class="caret"></span>
                     </a>
 
@@ -33,35 +32,35 @@
                         <li role="presentation">
                             <a role="menuitem" tabindex="-1"
                                href="<c:url value="/"/>">
-                                Дозатора жидких 1</a>
+                                Item</a>
                         </li>
                         <li role="presentation">
                             <a role="menuitem" tabindex="-1"
                                href="<c:url value="/"/>">
-                                Дозатора жидких 2</a>
+                                Item</a>
                         </li>
                         <li role="presentation" class="nav-divider"></li>
                         <li role="presentation">
                             <a role="menuitem" tabindex="-1"
-                               href="<c:url value="/"/>">Дозатора инертных 3</a>
+                               href="<c:url value="/"/>">Item</a>
                         </li>
                         <li role="presentation">
                             <a role="menuitem" tabindex="-1"
-                               href="<c:url value="/"/>">Дозатора инертных 4</a>
+                               href="<c:url value="/"/>">Item</a>
                         </li>
                         <li role="presentation">
                             <a role="menuitem" tabindex="-1"
-                               href="<c:url value="/"/>">Дозатора инертных 5</a>
+                               href="<c:url value="/"/>">Item</a>
                         </li>
 
                         <li role="presentation" class="nav-divider"></li>
                         <li role="presentation">
                             <a role="menuitem" tabindex="-1"
-                               href="<c:url value="/"/>">Смесителя</a>
+                               href="<c:url value="/"/>">Item</a>
                         </li>
                         <li role="presentation">
                             <a role="menuitem" tabindex="=-1"
-                               href="<c:url value="/" />">Экструдера</a>
+                               href="<c:url value="/" />">Item</a>
                         </li>
                     </ul>
                 </li>

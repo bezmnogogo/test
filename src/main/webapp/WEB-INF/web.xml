@@ -30,7 +30,7 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>
             com.totalizator.config.AspectJConfig,
-            com.totalizator.config.DatabaseConfig
+            com.totalizator.config.HibernateConfiguration,
             com.totalizator.config.SecurityConfig,
             com.totalizator.config.TilesConfig,
             com.totalizator.config.ValidationConfiguration,
