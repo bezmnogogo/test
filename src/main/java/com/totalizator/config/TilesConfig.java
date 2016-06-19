@@ -5,7 +5,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 
 
-
+/**
+ * Created by home
+ */
 @Configuration
 public class TilesConfig {
 

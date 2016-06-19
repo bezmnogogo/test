@@ -21,7 +21,9 @@ import org.springframework.transaction.annotation.TransactionManagementConfigure
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
-
+/**
+ * Created by home
+ */
 @Configuration
 @EnableJpaRepositories({"com.totalizator.dao.repository"})
 @EnableTransactionManagement

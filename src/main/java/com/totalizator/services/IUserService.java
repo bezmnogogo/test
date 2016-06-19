@@ -7,7 +7,9 @@ import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 
-
+/**
+ * Created by home
+ */
 public interface IUserService {
 
 	static boolean hasAllEmployeeRoleType(User user) {

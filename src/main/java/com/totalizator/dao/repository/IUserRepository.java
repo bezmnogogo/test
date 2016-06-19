@@ -8,6 +8,9 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
+/**
+ * Created by home
+ */
 public interface IUserRepository extends JpaRepository<User, Long> {
 	@Query("SELECT DISTINCT u FROM User u WHERE u.username = :username")
 	User findByUsername(@Param("username") String username);

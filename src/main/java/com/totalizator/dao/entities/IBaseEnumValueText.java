@@ -1,7 +1,8 @@
 package com.totalizator.dao.entities;
 
-
-
+/**
+ * Created by home
+ */
 public interface IBaseEnumValueText {
 	int getValue();
 

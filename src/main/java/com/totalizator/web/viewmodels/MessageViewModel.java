@@ -2,6 +2,9 @@ package com.totalizator.web.viewmodels;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
+/**
+ * Created by home
+ */
 @JsonAutoDetect
 public class MessageViewModel {
 

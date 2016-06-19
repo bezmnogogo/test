@@ -3,7 +3,9 @@ package com.totalizator.dao.entities;
 import javax.persistence.*;
 import java.util.Set;
 
-
+/**
+ * Created by home
+ */
 @Entity
 @Table(name = "nations")
 public class Nation extends GenericEntity {

@@ -6,7 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
-
+/**
+ * Created by home
+ */
 @MappedSuperclass
 public abstract class GenericEntity implements IGenericEntity, Serializable {
 	private static final long serialVersionUID = 6693684972230871997L;

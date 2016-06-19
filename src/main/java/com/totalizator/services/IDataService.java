@@ -4,6 +4,9 @@ import com.totalizator.dao.entities.Message;
 
 import java.util.List;
 
+/**
+ * Created by home
+ */
 public interface IDataService {
 
 	boolean test();

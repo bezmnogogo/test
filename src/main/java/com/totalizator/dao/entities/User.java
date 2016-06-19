@@ -8,7 +8,9 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Set;
 
-
+/**
+ * Created by home
+ */
 @Entity
 @Table(name = "users")
 public class User implements UserDetails {

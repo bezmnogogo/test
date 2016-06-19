@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.validation.Valid;
 import java.util.List;
 
+/**
+ * Created by home
+ */
 @Controller
 @RequestMapping(value = "/messages")
 public class MessagesController {

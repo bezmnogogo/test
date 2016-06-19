@@ -4,7 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-
+/**
+ * Created by home
+ */
 @Entity
 @Table(name = "messages")
 public class Message extends GenericEntity {
