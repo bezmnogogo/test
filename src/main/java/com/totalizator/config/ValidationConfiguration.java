@@ -7,9 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
-/**
- * Created by kasyanov on 6/17/2016.
- */
 @Configuration
 @ComponentScan(basePackages = {"com.totalizator.web.viewmodels"})
 public class ValidationConfiguration {

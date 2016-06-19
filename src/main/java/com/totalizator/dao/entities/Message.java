@@ -4,9 +4,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-/**
- * Created by kasyanov on 6/14/2016.
- */
 
 @Entity
 @Table(name = "messages")

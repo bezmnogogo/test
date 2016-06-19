@@ -6,9 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by kasyanov on 6/17/2016.
- */
 
 @Component
 public class NotifyMessageModule implements INotifyMessageModule {

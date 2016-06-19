@@ -7,9 +7,6 @@ import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 
-/**
- * Created by kasyanov on 6/17/2016.
- */
 
 public interface IUserService {
 

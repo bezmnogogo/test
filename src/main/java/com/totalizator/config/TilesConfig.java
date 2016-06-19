@@ -4,9 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
 
-/**
- * Created by kasyanov on 6/17/2016.
- */
 
 
 @Configuration

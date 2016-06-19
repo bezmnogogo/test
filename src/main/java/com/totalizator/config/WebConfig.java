@@ -21,9 +21,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
-/**
- * Created by home on 12.06.16.
- */
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {

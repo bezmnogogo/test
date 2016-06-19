@@ -2,9 +2,6 @@ package com.totalizator.utilits;
 
 import org.apache.log4j.Logger;
 
-/**
- * Created by kasyanov on 6/17/2016.
- */
 
 public class LogUtils {
 

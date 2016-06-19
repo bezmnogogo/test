@@ -8,9 +8,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by Oleg on 6/12/2015.
- */
 @Component
 public class MapperModule implements IMapperModule {
 

@@ -13,9 +13,6 @@ import org.springframework.web.socket.config.annotation.WebSocketTransportRegist
 
 import java.util.List;
 
-/**
- * Created by kasyanov on 6/17/2016.
- */
 
 @Configuration
 @EnableWebSocketMessageBroker

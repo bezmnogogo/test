@@ -4,9 +4,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Created by kasyanov on 6/17/2016.
- */
 
 public interface IUserDetailsService extends UserDetailsService {
 }

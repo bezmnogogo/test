@@ -2,9 +2,6 @@ package com.totalizator.web.viewmodels;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
-/**
- * Created by home on 13.06.16.
- */
 
 @JsonAutoDetect
 public class TestViewModel {

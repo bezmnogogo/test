@@ -15,9 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created by kasyanov on 6/17/2016.
- */
 
 @Service
 @Transactional

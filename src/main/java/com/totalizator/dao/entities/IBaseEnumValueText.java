@@ -1,8 +1,5 @@
 package com.totalizator.dao.entities;
 
-/**
- * Created by kasyanov on 6/17/2016.
- */
 
 
 public interface IBaseEnumValueText {

@@ -8,9 +8,7 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Set;
 
-/**
- * Created by kasyanov on 6/17/2016.
- */
+
 @Entity
 @Table(name = "users")
 public class User implements UserDetails {

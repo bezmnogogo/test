@@ -22,9 +22,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-/**
- * Created by kasyanov on 6/14/2016.
- */
 @Configuration
 @EnableJpaRepositories({"com.totalizator.dao.repository"})
 @EnableTransactionManagement

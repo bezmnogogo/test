@@ -5,9 +5,6 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 import java.util.Locale;
 import java.util.Properties;
 
-/**
- * Created by kasyanov on 6/17/2016.
- */
 
 public class ExposedResourceMessageBundleSource extends ReloadableResourceBundleMessageSource {
 	/**
