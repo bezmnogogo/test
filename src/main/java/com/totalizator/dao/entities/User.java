@@ -33,6 +33,17 @@ public class User implements UserDetails {
 			inverseJoinColumns = {@JoinColumn(name = "role_id")})
 	private Set<Role> roles;
 
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	private Set<Bet> bets;
+
+	public Set<Bet> getBets() {
+		return bets;
+	}
+
+	public void setBets(Set<Bet> bets) {
+		this.bets = bets;
+	}
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return this.getRoles();

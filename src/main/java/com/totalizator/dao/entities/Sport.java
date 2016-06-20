@@ -1,8 +1,7 @@
 package com.totalizator.dao.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
 /**
  * Created by home
@@ -16,6 +15,18 @@ public class Sport extends GenericEntity {
 
     @Column(name = "popularity", nullable = false)
     private long popularity;
+
+    @OneToMany(mappedBy = "sport", cascade = CascadeType.ALL)
+    private Set<Club> clubs;
+
+
+    public Set<Club> getClubs() {
+        return clubs;
+    }
+
+    public void setClubs(Set<Club> clubs) {
+        this.clubs = clubs;
+    }
 
     public String getName() {
         return name;

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<c:url value="/resources/css/kendo.dataviz.min.css"/> "/>
     <link rel="stylesheet" href="<c:url value="/resources/css/kendo.default.min.css"/> "/>
     <link rel="stylesheet" href="<c:url value="/resources/css/monitoring_elements.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="/resources/css/FirstPageStyle2.css"/>"/>
 
     <script src="<c:url value="/resources/js/jquery.min.js" />"></script>
     <script src="<c:url value="/resources/js/kendo.all.min.js"/> "></script>
