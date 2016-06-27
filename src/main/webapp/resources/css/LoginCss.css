@@ -1,0 +1,223 @@
+body{
+	background-color: #f7f7f7;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+@font-face
+{
+	font-family: Rubik One Regular;
+	src: url(/Fonts/RubikOne-Regular.ttf);
+}
+@font-face
+{
+	font-family: Roboto Condensed Light;
+	src: url(/Fonts/RobotoCondensed-Light.ttf);
+}
+header
+{
+	background-color: #fbf8f7;
+	border: 0px solid white;
+	box-shadow: 4px 4px 5px 0px rgba(48, 48, 48, 0.21);
+	float: left;
+	height: 50px;
+	margin-top: 0px;
+	width: 100%;
+}
+nav a
+{
+	text-decoration: none;
+}
+header nav ul{
+	margin: 0 0 0 1%;
+	overflow: hidden;
+	padding: 0;
+}
+
+header nav li
+{
+	font: 14px '0swald', sans-serif;
+	list-style-position: inside;
+	padding-left: 10px;
+	padding-right: 40px;
+	padding-top: 15px;
+}
+.menu li{
+	display: inline-block;
+	float: right;
+	list-style-type: none;
+}
+header .menu a
+{
+	color: #252323;
+	font-size: 17px;
+}
+header a:hover
+{
+	color: #ec7550;
+}
+header.menu{
+	height: 100%;
+	width: 100%;
+}
+h1
+{
+	color: #252323;
+	font-family: "Rubik One Regular";
+	font-size: 43px;
+	font-weight: 500;
+	letter-spacing: 3px;
+	margin-top: 5px;
+	text-align: center;
+}
+p
+{
+	color: #bbbabb;
+	font-family: "Roboto Condensed Light";
+	font-size: 20px;
+	letter-spacing: 1px;
+	margin-top: 10px;
+	text-align: center;
+}
+.buttonEmail input
+{
+	background-color: #ffffff;
+	border: 1px;
+	border-color: #fe3f04;
+	border-radius: 25px;
+	border-style: solid;
+	color: #bbbabb;
+	display: inline-block;
+	font-family: "Roboto Condensed Light";
+	font-size: 20px;
+	height: 40px;
+	letter-spacing: 1px;
+	margin-top: 10px;
+	text-align: center;
+	text-decoration: none;
+	width: 300px;
+	width: 20%;
+}
+.buttonPassword input
+{
+	background-color: #ffffff;
+	border: 1px;
+	border-color: #fe3f04;
+	border-radius: 25px;
+	border-style: solid;
+	color: #bbbabb;
+	display: inline-block;
+	font-family: "Roboto Condensed Light";
+	font-size: 20px;
+	height: 40px;
+	letter-spacing: 1px;
+	margin-top: 10px;
+	text-align: center;
+	text-decoration: none;
+	width: 300px;
+	width: 20%;
+}
+.buttonLogin input
+{
+	background-color: #ec7550;
+	border: 1px;
+	border-color: #fe3f04;
+	border-radius: 25px;
+	border-style: solid;
+	color: white;
+	display: inline-block;
+	font-family: "Roboto Condensed Light";
+	font-size: 20px;
+	height: 40px;
+	letter-spacing: 1px;
+	margin-top: 20px;
+	text-align: center;
+	text-decoration: none;
+	width: 300px;
+	width: 20%;
+}
+.buttonRegistration input
+{
+	background-color: #ec7550;
+	border: 1px;
+	border-color: #fe3f04;
+	border-radius: 25px;
+	border-style: solid;
+	color: white;
+	display: inline-block;
+	font-family: "Roboto Condensed Light";
+	font-size: 20px;
+	height: 40px;
+	letter-spacing: 1px;
+	margin-top: 20px;
+	text-align: center;
+	text-decoration: none;
+	width: 300px;
+	width: 20%;
+}
+footer{
+	background-color: white;
+	float: left;
+	height: 250px;
+	margin-top: 20px;
+	width: 100%;
+}
+
+.navigation {
+	float: left;
+	width: 35%;
+	margin-top: 10px;
+	margin-left: 20px;
+	height: 200px;
+}
+
+.navigation .menu a{
+	color: #252323;
+	font-family: "Roboto Condensed Light";
+	font-size: 20px;
+}
+
+.navigation li{
+	margin-bottom: 30px;
+}
+
+.navigation a:hover{
+	color: #ec7550;
+}
+
+.telephone, .adress, .email{
+	float: left;
+	width: 20%;	
+	text-align: center;
+	font-size: 25px;
+	margin-top: 30px;
+	word-wrap: break-word;
+}
+
+img {
+  max-width: 15%;
+}
+
+.avtorfoot{
+	background-color: #FF744B;
+	float: left;
+	height: 50px;
+	text-align: center;
+	width: 100%;
+}
+
+.avtorfoot p{
+	color: white;
+	display: inline-block;
+	font-size: 17px;
+	margin-top: 15px;
+	text-align: center;
+	text-decoration: none;
+}.
+.
+.clearfix:after{
+	clear: both;
+	content: "";
+	display: block;
+	height: 0;
+}

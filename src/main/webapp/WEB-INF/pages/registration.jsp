@@ -12,17 +12,17 @@
 <html>
 <head>
     <title>Title</title>
-    <link href=""
+    <link rel="stylesheet" href="<c:url value="/resources/css/registrationcss.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="/resources/css/LoginCss.css"/>"/>
 </head>
 <body>
 <header class="clearfix" id="header">
     <div class="logo" href=" "></div>
     <nav class="clearfix" id="hdmenu">
         <ul class= "menu">
-            <li><a href=" ">Ставки</a></li>
-            <li><a href=" ">Результаты</a></li>
-            <li><a href=" ">Регистрация</a></li>
-            <li><a href=" ">Вход</a></li>
+            <li><a href="<c:url value="/bet/bet"/>">Ставки</a></li>
+            <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
+            <li><a href="<c:url value="/login"/>">Вход</a></li>
         </ul>
     </nav>
 </header>
@@ -43,24 +43,24 @@
         <div class="navigation">
             <nav class="navigation">
                 <ul class = "menu">
-                    <li><a href=" ">Результаты</a></li>
-                    <li><a href=" ">Мои ставки</a></li>
+                    <li><a href="<c:url value="/bet/results" />">Результаты</a></li>
+                    <li><a href="<c:url value="/bet/bet" />">Мои ставки</a></li>
                     <li><a href=" ">Инструкция</a></li>
                 </ul>
             </nav>
         </div>
         <div class = "telephone">
-            <img src="Image/Icons/iconphone.png"><br>
+            <img src="image/iconphone.png"><br>
             <b>Телефон</b>
             <p>+375(29)000-000-000</p>
         </div>
         <div class="adress">
-            <img src="Image/Icons/iconadress.png" ><br>
+            <img src="image/iconadress.png" ><br>
             <b>Адрес</b>
             <p>Гикало 9, Минск</p>
         </div>
         <div class = "email">
-            <img src="Image/Icons/iconmap.png" ><br>
+            <img src="image/iconmap.png" ><br>
             <b>Email</b>
             <p>stavki@gmail.com</p>
         </div>

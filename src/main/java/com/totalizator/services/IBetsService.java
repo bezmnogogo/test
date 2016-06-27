@@ -18,4 +18,6 @@ public interface IBetsService {
     List<Bet> getBetsByUserId(long id);
 
     List<Bet> getFinishedBets();
+
+    public List<Bet> getBetsByMatchId(long id);
 }

@@ -14,9 +14,8 @@
 		<header class="clearfix" id="header">
 			<nav class="clearfix" id="hdmenu">
 				<ul class= "menu">
-					<li> <a href="<c:url value="/"/>">Контакты</a>
-					<li> <a href="<c:url value="/"/>">Ставки</a>
-					<li> <a href="<c:url value="/"/>">Личный кабинет</a>					
+					<li> <a href="<c:url value="/bet/bet"/>">Ставки</a>
+					<li> <a href="<c:url value="/privateRoom/"/>">Личный кабинет</a>
 				</ul>
 			</nav>				
 		</header>
@@ -33,8 +32,8 @@
 				<c:forEach var="bet" items="${betList}">
 				<tr id="row_${bet.match.id}">
 					 <td>${bet.match.toString()}</td>
+					<td>${bet.match.status}</td>
 					 <td>${bet.winCoefficient}</td>
-					 <td>${bet.match.finished}</td>
 					 <td>${bet.amount}</td>
 					 <td>${bet.winAmount}</td>
 				</tr>
@@ -54,8 +53,8 @@
 				<div class="navigation">
 					<nav class="navigation">
 						<ul class = "menu">
-						   <li><a href="<c:url value="/"/>">Результаты</a></li>
-						   <li><a href="<c:url value="/"/>">Мои ставки</a></li>
+						   <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
+						   <li><a href="<c:url value="/bet/bet"/>">Мои ставки</a></li>
 						   <li><a href="<c:url value="/"/>">Инструкция</a></li>
 						</ul>
 					</nav>

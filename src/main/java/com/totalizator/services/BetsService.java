@@ -46,6 +46,12 @@ public class BetsService implements IBetsService {
         return betRepository.getBetsByUserId(id);
     }
 
+    @Transactional
+    @Override
+    public List<Bet> getBetsByMatchId(long id) {
+        return betRepository.getBetsByMatchId(id);
+    }
+
     @Override
     @Transactional
     public Bet makeBet(Bet bet) {

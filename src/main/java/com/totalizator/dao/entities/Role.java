@@ -87,5 +87,12 @@ public class Role implements GrantedAuthority {
 		public String getHomeUrl() {
 			return homeUrl;
 		}
+
+		@Override
+		public String toString() {
+			if(this.value == 1)
+				return "admin";
+			else return "user";
+		}
 	}
 }

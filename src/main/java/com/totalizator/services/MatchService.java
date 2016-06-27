@@ -37,4 +37,9 @@ public class MatchService implements IMatchService {
     public Match findMatchById(long id) {
         return matchRepository.findOne(id);
     }
+
+    @Override
+    public List<Match> getMatchesByStatus(boolean finished) {
+        return matchRepository.getMatchesByStatus(finished);
+    }
 }

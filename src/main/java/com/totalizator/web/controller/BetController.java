@@ -2,6 +2,7 @@ package com.totalizator.web.controller;
 
 import com.totalizator.dao.entities.Bet;
 import com.totalizator.dao.entities.Match;
+import com.totalizator.dao.entities.Role;
 import com.totalizator.dao.entities.User;
 import com.totalizator.dao.repository.IMatchRepository;
 import com.totalizator.services.IBetsService;
@@ -18,8 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.Date;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by Andrei Savchuk.
@@ -43,8 +43,13 @@ public class BetController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/bet")
     public String bets(@AuthenticationPrincipal User user, ModelMap model,HttpServletRequest request){
-        model.addAttribute("matchList", matchService.findAll());
+        model.addAttribute("matchList", matchService.getMatchesByStatus(false));
         String s = request.getParameter("id");
+        Set<Role> roles = user.getRoles();
+        for (Role role: roles) {
+            if(role.getType().toString() == "admin")
+                return "AdminBetPage";
+        }
         return "BetPage";
     }
 
@@ -82,16 +87,44 @@ public class BetController {
         match = setCoefficientService.setCoefficients(bet.getMatch());
         //matchService.saveMatch(match);
         usr = userService.saveUser(user);
-        model.addAttribute("matchList", matchService.findAll());
+        model.addAttribute("matchList", matchService.getMatchesByStatus(false));
         return "BetPage";
     }
 
     @RequestMapping(value = "/endMatch", method = RequestMethod.POST)
     public String endMatch(HttpServletRequest request, ModelMap model){
         Match match = matchService.findMatchById(Long.parseLong(request.getParameter("id")));
-        Random random = new Random();
+        Random random = new Random(System.currentTimeMillis());
         match.setGuestGoals(random.nextInt(5));
         match.setHomeGoals(random.nextInt(5));
-        return "BetPage";
+        if(match.getGuestGoals() > match.getHomeGoals())
+            match.setResult(2);
+        if (match.getGuestGoals() < match.getHomeGoals())
+            match.setResult(0);
+        if(match.getGuestGoals() == match.getHomeGoals())
+            match.setResult(1);
+        match.setFinished(true);
+        List<Bet> bets = betsService.getBetsByMatchId(match.getId());
+        for (Bet bet: bets) {
+            if(bet.getGoal() == match.getResult())
+                bet.setWinAmount(bet.getWinCoefficient()*bet.getAmount());
+            else bet.setWinAmount(0);
+            betsService.makeBet(bet);
+        }
+        Match match1 = matchService.saveMatch(match);
+        model.addAttribute(matchService.getMatchesByStatus(false));
+        return "AdminBetPage";
+    }
+
+    @RequestMapping(value = "/results", method = RequestMethod.GET)
+    public String results(@AuthenticationPrincipal User user, ModelMap model){
+        List<Bet> usrBets = betsService.getBetsByUserId(user.getId());
+        List<Bet> bets = new ArrayList<Bet>();
+        for (Bet bet: usrBets) {
+            if(bet.getMatch().isFinished())
+                bets.add(bet);
+        }
+        model.addAttribute("betList", bets);
+        return "result";
     }
 }

@@ -18,10 +18,9 @@
 					<div class="logo" href=" "></div>
 					<nav class="clearfix" id="hdmenu">
 						<ul class= "menu">
-						   <li><a href="<c:url value="/"/>">Ставки</a></li>
-						   <li><a href="<c:url value="/"/>">Результаты</a></li>
-						   <li><a href="<c:url value="/"/>">Регистрация</a></li>
-						   <li><a href="<c:url value="/"/>">Вход</a></li>
+						   <li><a href="<c:url value="/bet/bet"/>">Ставки</a></li>
+						   <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
+						   <li><a href="<c:url value="/logout"/>">Выход</a></li>
 						</ul>
 					 </nav>
 				  </header>
@@ -38,7 +37,6 @@
 								<td><input type="radio" id="2" name="betChoise" value="1"><a href=" "><b>X:${match.drawCoeffficient}</b></a></td>
 								<td><input type="radio" id="3" name="betChoise" value="2"><a href=" "><b>${match.guestClub.name}: ${match.guestClubWinCoefficient}<input type="hidden" name="id" value="${match.id}"</b></a></td>
 									<td><button type="submit">сделать ставку</button></td>
-
 							</tr>
 								</form>
 							</c:forEach>
@@ -59,8 +57,8 @@
 		<footer class="clearfix" id="footer">
 			<nav>
 				<ul class="menu">
-					<li><a href="<c:url value="/"/>">Результаты</a></li>
-					<li><a href="<c:url value="/"/>">Мои ставки</a></li>
+					<li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
+					<li><a href="<c:url value="/bet/bet"/>">Мои ставки</a></li>
 					<li><a href="<c:url value="/"/>">Инструкция</a></li>
 				</ul>	
 			</nav>
@@ -81,7 +79,7 @@
 					<a href=" ">stavki@gmail.com</a>
 				</div>
 			</div>
-			<div class="avtorfoot"><p>@2016 Stavki.by</p><div>
+			<div class="avtorfoot"><p>@2016 Stavki.by</p></div>
 		</footer>
 	</body>
 </html>	

@@ -15,4 +15,5 @@ public interface IMatchService {
 
     Match saveMatch(Match match);
 
+    List<Match> getMatchesByStatus(boolean finished);
 }

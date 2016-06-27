@@ -3,12 +3,11 @@ body{
 }
 
 
-header{
-	background-image:url("/Users/home/Andrei/практика/SpringWebMVCMaven/src/main/webapp/resources/image/mainback.png");
+.header{
 	background-size:1900px 800px;
-	background-repeat:no-repeat;
-	width:1900px;
-	height:800px;
+	background: url("/resources/css/image/mainback.png");
+	width: 1900px;
+	height: 800px;
 	float:left;
 }
 

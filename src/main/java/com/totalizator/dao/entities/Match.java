@@ -75,6 +75,17 @@ public class Match extends GenericEntity {
     @Column(name = "guestGoals", nullable = true)
     private long guestGoals = 0;
 
+    public long getResult() {
+        return result;
+    }
+
+    public void setResult(long result) {
+        this.result = result;
+    }
+
+    @Column(name = "result", nullable = false)
+    private long result;
+
     public Club getTournament() {
         return tournament;
     }
@@ -150,4 +161,9 @@ public class Match extends GenericEntity {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "tournament")
     private Club tournament;
+
+    public String getStatus(){
+        if(this.finished == true) return "Окончен";
+        else return "Не окончен";
+    }
 }

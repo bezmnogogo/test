@@ -7,12 +7,12 @@ body{
 
 @font-face{
 	font-family: Rubik One Regular;
-	src: (Fonts/RubikOne-Regular.ttf);
+	src: url(Fonts/RubikOne-Regular.ttf);
 }
 
 @font-face{
 	font-family: Roboto Condensed Light;
-	src: (Fonts/RobotoCondensed-Light.ttf);
+	src: url(Fonts/RobotoCondensed-Light.ttf);
 }
 
 header{

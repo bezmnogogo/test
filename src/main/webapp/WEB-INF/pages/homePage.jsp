@@ -7,15 +7,12 @@
 	 <head>
 		 <meta charset="utf-8">
 		 <title>home page</title>
-		 <style>
-			 body{background: green;}
-		 </style>
 		 <link href='https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
 		 <link href='https://fonts.googleapis.com/css?family=Droid+Serif:700' rel='stylesheet' type='text/css'>
 		 <link rel="stylesheet" href="<c:url value="/resources/css/FirstPageStyle2.css"/>"/>
 	</head>
 	<body>
-		<header class="clearfix" id="header">
+		<header class="clearfix" id="header" style="background: url('/resources/css/image/mainback.png')">
 			<a class="logo" href=" "></a>
 			<nav class="clearfix" id="hdmenu">
 				<ul class="menu">
@@ -36,7 +33,7 @@
 		<footer class="clearfix" id="footer">
 			<nav>
 				<ul class="menu">
-					<li><a href="<c:url value="/"/>">Результаты</a></li>
+					<li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
 					<li><a href="<c:url value="/bet/bet"/>">Мои ставки</a></li>
 					<li><a href="<c:url value="/"/>">Инструкция</a></li>
 				</ul>	
@@ -58,7 +55,7 @@
 					<a href=" ">stavki@gmail.com</a>
 				</div>
 			</div>
-			<div class="avtorfoot"><p>@2016 Stavki.by</p><div>
+			<div class="avtorfoot"><p>@2016 Stavki.by</p></div>
 		</footer>
 	</body>
 </html>
