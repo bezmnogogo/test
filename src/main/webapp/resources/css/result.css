@@ -1,0 +1,249 @@
+body{
+	background-color: #f7f7f7;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+@font-face{
+	font-family: Rubik One Regular;
+	src: (Fonts/RubikOne-Regular.ttf);
+}
+
+@font-face{
+	font-family: Roboto Condensed Light;
+	src: (Fonts/RobotoCondensed-Light.ttf);
+}
+
+header{
+	background-color: #fbf8f7;
+	border: 0px solid white;
+	box-shadow: 4px 4px 5px 0px rgba(48, 48, 48, 0.21);
+	float: left;
+	height: 50px;
+	margin-top: 0px;
+	width: 100%;
+}
+
+nav a{
+	text-decoration: none;
+}
+
+header nav ul{
+	margin: 0 0 0 1%;
+	overflow: hidden;
+	padding: 0;
+}
+
+header nav li{
+	font: 14px '0swald', sans-serif;
+	list-style-position: inside;
+	padding-left: 10px;
+	padding-right: 40px;
+	padding-top: 15px;
+}
+
+.menu li{
+	display: inline-block;
+	float: right;
+	list-style-type: none;
+}
+
+header .menu a{
+	color: #252323;
+	font-size: 17px;
+}
+
+header a:hover{
+	color: #ec7550;
+}
+
+header.menu{
+	height: 100%;
+	width: 100%;
+}
+
+.result{
+	float: left;
+	width: 100%;
+	color: #252323;
+	font-family: "Rubik One Regular";
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 40px;
+	letter-spacing: 3px;
+	margin-top: 0px;
+	text-align: center;
+}
+
+.radio_bottom {
+	border: 0px;
+	float: left;
+	margin-left: 40px;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+label{
+	margin-left: 15px;	
+}
+
+input[type="radio"] {
+    display:none;            
+}
+
+input[type="radio"] + label {
+  font-family: "Rubik One Regular";
+  font-size: 22px;
+  color: #656665;
+  cursor: pointer;
+}
+
+input[type="radio"] + label::before {
+    content: "";
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    margin: 0 5px 0 0;
+    background-image: url(http://uniformjs.com/images/sprite.png);
+    background-repeat: no-repeat;
+}
+
+input[type="radio"] + label::before {
+    background-position: 0px -279px;
+}
+
+input[type="radio"]:checked + label::before {
+    background-position: -108px -279px;
+}
+
+input[type="radio"]:disabled + label::before {
+    background-position: -144px -279px;
+}
+input[type="radio"]:checked:disabled + label::before {
+    background-position: -162px -279px;
+}
+
+table {
+	margin-left: 40px;
+}
+
+.tablerate{
+	float: left;
+	width: 60%;
+	font-family: "Rubik One Regular";
+	text-align: left;
+	border-collapse: collapse;
+	border-spacing: 5px;
+	background: #F2F5F7;
+	color: #656665;
+	border: 20px solid #F2F5F7;
+	border-radius: 20px;
+	border-top: 0px solid #E8E5E5;
+}
+
+.tablerate caption {
+	font-weight: bold;
+	text-align: left;
+	font-size: 18px;
+	padding: 10px;
+	background: #FBF8F7;
+	border: 3px solid #E8E5E5;
+	border-bottom: 0px solid #E8E5E5;
+}
+
+.tablerate th{
+	background: #F2F5F7;
+	padding: 10px;
+}
+
+.tablerate td{
+	background: #FFFFFF;
+	padding: 10px;
+	border-bottom: 2px solid #F2F5F7;
+}
+
+.tablepurse{	
+	float: left;
+	margin-top: 20px;
+	width: 40%;
+	font-family: "Rubik One Regular";
+    font-size: 18px;
+    width: 660px;
+    background: #F7F7F7;
+    text-align: left;
+    border-collapse: collapse;
+    color: #3E4347;
+}
+
+.tablepurse td{
+	padding: 10px;
+}
+
+footer{
+	background-color: white;
+	float: left;
+	height: 250px;
+	margin-top: 20px;
+	width: 100%;
+}
+
+.navigation {
+	float: left;
+	width: 35%;
+	margin-top: 10px;
+	margin-left: 20px;
+	height: 200px;
+	white-space: nowrap;
+}
+
+.navigation .menu a{
+	color: #252323;
+	font-family: "Roboto Condensed Light";
+	font-size: 20px;
+}
+
+.navigation li{
+	margin-bottom: 30px;
+}
+
+.navigation a:hover{
+	color: #ec7550;
+}
+
+.telephone, .adress, .email{
+	float: left;
+	width: 20%;	
+	text-align: center;
+	font-size: 25px;
+	margin-top: 30px;
+	word-wrap: break-word;
+}
+
+img {
+  max-width: 15%;
+}
+
+.avtorfoot{
+	background-color: #FF744B;
+	float: left;
+	height: 50px;
+	text-align: center;
+	width: 100%;
+}
+
+.avtorfoot p{
+	color: white;
+	display: inline-block;
+	font-size: 17px;
+	margin-top: 15px;
+	text-align: center;
+	text-decoration: none;
+}.
+.
+.clearfix:after{
+	clear: both;
+	content: "";
+	display: block;
+	height: 0;
+}

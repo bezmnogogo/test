@@ -19,4 +19,7 @@ public interface IUserRepository extends JpaRepository<User, Long> {
 
 	@Query("select case when count(u)>0 then true else false end from User u where u.username = :login")
 	boolean checkIfUserExists(@Param("login") String login);
+
+	@Query("select case when count(u)>0 then true else false end from User u where u.mail = :mail")
+	boolean checkIfMailExists(@Param("mail") String mail);
 }

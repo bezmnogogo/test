@@ -20,6 +20,19 @@ public class Match extends GenericEntity {
     @Column(name = "drawCoeffficient", nullable = false)
     private float drawCoeffficient;
 
+    public Set<Bet> getBets() {
+        return bets;
+    }
+
+    public void setBets(Set<Bet> bets) {
+        this.bets = bets;
+    }
+
+    @Override
+    public String toString() {
+        return homeClub.getName() + " " +guestClub.getName();
+    }
+
     @Column(name = "date", nullable = false)
     private Date date;
 
@@ -39,6 +52,28 @@ public class Match extends GenericEntity {
 
     @OneToMany(mappedBy = "match", cascade = CascadeType.ALL)
     private Set<Bet> bets;
+
+    @Column(name = "homeGoals", nullable = true)
+    private long homeGoals = 0;
+
+    public long getGuestGoals() {
+        return guestGoals;
+    }
+
+    public void setGuestGoals(long guestGoals) {
+        this.guestGoals = guestGoals;
+    }
+
+    public long getHomeGoals() {
+        return homeGoals;
+    }
+
+    public void setHomeGoals(long homeGoals) {
+        this.homeGoals = homeGoals;
+    }
+
+    @Column(name = "guestGoals", nullable = true)
+    private long guestGoals = 0;
 
     public Club getTournament() {
         return tournament;

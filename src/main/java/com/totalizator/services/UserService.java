@@ -13,7 +13,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by home
@@ -68,6 +70,16 @@ public class UserService implements IUserService {
 
 	@Override
 	@Transactional
+	public void setUserRole(User user){
+		long id = 2;
+		Role role = roleRepository.findOne(id);
+		HashSet<Role> roles = new HashSet<Role>();
+		roles.add(role);
+		user.setRoles(roles);
+	}
+
+	@Override
+	@Transactional
 	public User saveCurrentUserWithDetailsUpdate(User user) {
 		User savedUser = userRepository.save(user);
 		Authentication authentication = new UsernamePasswordAuthenticationToken(savedUser, savedUser.getPassword(), savedUser.getAuthorities());
@@ -90,5 +102,10 @@ public class UserService implements IUserService {
 	@Override
 	public boolean checkIfUserExists(String login) {
 		return userRepository.checkIfUserExists(login);
+	}
+
+	@Override
+	public boolean checkIfMailExists(String mail) {
+		return userRepository.checkIfMailExists(mail);
 	}
 }

@@ -66,6 +66,11 @@ public interface IUserService {
 	 */
 	void changeUserPassword(String username, String currentPassword, String newPassword) throws Exception;
 
+	public void setUserRole(User user);
+
 	@Cacheable(value = "DataCache", key = "'UserService_' + #root.methodName + '_' + #login")
 	boolean checkIfUserExists(String login);
+
+	@Cacheable(value = "DataCache", key = "'UserService_' + #root.methodName + '_' + #mail")
+	boolean checkIfMailExists(String mail);
 }
