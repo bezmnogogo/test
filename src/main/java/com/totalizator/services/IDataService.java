@@ -1,5 +1,6 @@
 package com.totalizator.services;
 
+import com.totalizator.dao.entities.Club;
 import com.totalizator.dao.entities.Message;
 
 import java.util.List;
@@ -18,4 +19,6 @@ public interface IDataService {
 	void deleteMessage(Long id);
 
 	List<Message> findAllMessages();
+
+	public List<Club> getAllClubs();
 }

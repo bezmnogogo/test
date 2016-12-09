@@ -1,5 +1,6 @@
 package com.totalizator.web.controller;
 
+import com.totalizator.dao.entities.Club;
 import com.totalizator.dao.entities.Message;
 import com.totalizator.web.modules.interfaces.IMapperModule;
 import com.totalizator.web.modules.interfaces.INotifyMessageModule;
@@ -42,7 +43,18 @@ public class MessagesController {
 
 		model.addAttribute("messagesList", messages);
 
-		return "messages/messages";}
+		return "messages/messages";
+	}
+
+	@RequestMapping(method = RequestMethod.GET, value = "/showClubs")
+	public String showClubs(ModelMap model) {
+
+		List<Club> clubs = dataService.getAllClubs();
+
+		model.addAttribute("clubList", clubs);
+
+		return "matches";
+	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "/add")
 	@ResponseBody

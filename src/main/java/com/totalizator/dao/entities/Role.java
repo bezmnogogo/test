@@ -61,7 +61,8 @@ public class Role implements GrantedAuthority {
 	}
 
 	public enum RoleType implements IBaseEnumValueText {
-		ROLE_ADMIN(1, "Администратор", "/");
+		ROLE_ADMIN(1, "Администратор", "/"),
+        ROLE_USER(2, "Пользователь", "/USER");
 
 		private final int value;
 		private final String text;
@@ -85,6 +86,13 @@ public class Role implements GrantedAuthority {
 
 		public String getHomeUrl() {
 			return homeUrl;
+		}
+
+		@Override
+		public String toString() {
+			if(this.value == 1)
+				return "admin";
+			else return "user";
 		}
 	}
 }

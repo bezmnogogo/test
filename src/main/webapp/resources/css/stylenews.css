@@ -1,0 +1,110 @@
+body {
+  width: 80%;
+  margin: 30px auto;
+  font-family: sans-serif;
+}
+
+.header{
+	border:0px solid white;
+	width:1400px;
+	float:left;
+	margin-top:5px;
+}
+
+.navigation{
+	color:#696969;
+	text-decoration:none;
+	float:right;
+	font-family: 'PT Sans', arial;
+	font-size:18px;
+	margin-right:30px;
+	margin-top:0px;
+}
+
+h1{
+	color: black;
+	font-family: 'Ubuntu Bold', arial;
+	font-size:43px;
+	float:left;
+	margin-left:550px;
+	margin-top:20px;
+}
+
+.setka {
+  margin: 40px;
+  float: center;
+  width: 96%;
+  max-width: 960px;
+  margin-left:190px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; 
+}
+
+.linkimg {
+  display: inline-block;
+  margin-bottom: 8px;
+  width: calc(50% - 4px);
+}
+
+.linkimg:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+@media screen and (min-width: 50em) {
+   .linkimg {
+    width: calc(25% - 6px);
+  }
+}
+
+.linkimg:hover img {
+  transform: scale(1.15);
+}
+
+figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+figcaption {
+  margin-top: 15px;
+}
+
+.headerimg{
+	margin: 40 px;
+	color:black;
+}
+
+.bodyimg{
+	margin: 0;
+	color:#696969;
+}
+
+img {
+  border: none;
+  width: 250;
+  height: 250;
+  display: block;
+  background: #ccc;
+  transition: transform .2s ease-in-out;
+}
+
+.imgdate{
+  margin: 0;
+  border: none;
+  width: 30;
+  height: 30;
+}
+
+.button{
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  width: 96%;
+  max-width: 200px;
+  text-align: center;
+  background: #FF4500;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in, color 0.2s ease-in;
+}

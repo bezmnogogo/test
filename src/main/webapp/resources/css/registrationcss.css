@@ -1,0 +1,16 @@
+body{
+	background-color: #ffffff;
+}
+@font-face{
+	font-family:Rubik One Regular;
+}
+.header{
+	border:2px solid white;
+	width:1920px;
+	margin-top:5px;
+	float:left;
+}
+ .buttonName{
+    border: 2px solid;
+    border-radius: 25px;
+}

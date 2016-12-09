@@ -51,7 +51,8 @@ public class SecurityConfig extends GlobalMethodSecurityConfiguration {
 						"ROLE_ADMIN > ROLE_SCHEDULE_WRITE " +
 						"ROLE_EMPLOYEE_WRITE > ROLE_EMPLOYEE_READ " +
 						"ROLE_REPORTS_WRITE > ROLE_REPORTS_READ " +
-						"ROLE_SCHEDULE_WRITE > ROLE_SCHEDULE_READ"
+						"ROLE_SCHEDULE_WRITE > ROLE_SCHEDULE_READ " +
+						"ROLE_ADMIN > ROLE_USER"
 		);
 		return hierarchy;
 	}
@@ -123,11 +124,13 @@ public class SecurityConfig extends GlobalMethodSecurityConfiguration {
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
 			http
-					.csrf().disable()
+					/*.csrf().disable()
 					.authorizeRequests()
 					.accessDecisionManager(accessDecisionManager())
-					.antMatchers("/messages")
-					.authenticated()
+					.antMatchers("/messages/*").access("hasRole('ROLE_USER')")
+					//.authenticated()
+					.antMatchers("/messages/showClubs")
+					.hasRole("ADMIN")
 					.anyRequest().hasRole("ADMIN")
 					.and()
 					.formLogin()
@@ -137,7 +140,21 @@ public class SecurityConfig extends GlobalMethodSecurityConfiguration {
 					.logout().permitAll()
 					.and()
 					.exceptionHandling().accessDeniedPage("/403")
-					.and().httpBasic();
+					.and().httpBasic();*/
+					.csrf().disable()
+					.authorizeRequests()
+					.antMatchers("/home").access("hasRole('ROLE_USER')")
+					.antMatchers("/messages/*").access("hasRole('ROLE_ADMIN')")
+					.and().formLogin().loginPage("/login");
+					/*.loginPage("/login").permitAll()
+					.failureUrl("/login?auth=fail")
+					.and()
+					.logout().permitAll()
+					.and()
+					.exceptionHandling().accessDeniedPage("/403")
+					.and().httpBasic();*/
+
+
 		}
 	}
 

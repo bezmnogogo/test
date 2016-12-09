@@ -24,6 +24,10 @@ public class User implements UserDetails {
 	private String username;
 	@Column(name = "Password", nullable = false)
 	private String password;
+	@Column(name = "webPurse", nullable = false)
+	private String webPurse;
+	@Column(name = "cash", nullable = false)
+	private float cash = 50000;
 	@Column(name = "Enabled", nullable = false)
 	private boolean enabled;
 	@ManyToMany(fetch = FetchType.EAGER)
@@ -32,6 +36,44 @@ public class User implements UserDetails {
 			joinColumns = {@JoinColumn(name = "user_id")},
 			inverseJoinColumns = {@JoinColumn(name = "role_id")})
 	private Set<Role> roles;
+
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+	private Set<Bet> bets;
+
+	@Column(name = "mail", nullable = false)
+	private String mail;
+
+	public float getCash() {
+		return cash;
+	}
+
+	public void setCash(float cash) {
+		this.cash = cash;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+	public Set<Bet> getBets() {
+		return bets;
+	}
+
+	public void setBets(Set<Bet> bets) {
+		this.bets = bets;
+	}
+
+	public String getWebPurse() {
+		return webPurse;
+	}
+
+	public void setWebPurse(String webPurse) {
+		this.webPurse = webPurse;
+	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -100,5 +142,9 @@ public class User implements UserDetails {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+	public void addCash(float cash){
+		this.cash += cash;
 	}
 }
