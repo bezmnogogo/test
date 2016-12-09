@@ -17,9 +17,11 @@
             <div class="logo" href=" "></div>
             <nav class="clearfix" id="hdmenu">
                 <ul class= "menu">
-                    <li><a href="<c:url value="/bet/bet"/>">Ставки</a></li>
+                    <li><a href="<c:url value="/bet/bet"/>">Ставки Ваши</a></li>
                     <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
                     <li><a href="<c:url value="/logout"/>">Выход</a></li>
+                    <li> <a href="<c:url value="/bet/allBets"/>">Все ставки</a>
+                    <li> <a href="<c:url value="/match/"/>">добавить матч</a>
                 </ul>
             </nav>
         </header>

@@ -6,8 +6,8 @@
 <html>
     <head>
 		<meta charset="utf-8">
-			<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-			<link href='https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+			<%--<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+			<link href='https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic' rel='stylesheet' type='text/css'>--%>
 		<link rel="stylesheet" href="<c:url value="/resources/css/privateroom.css"/>"/>
 	</head>
     <body>
@@ -16,6 +16,7 @@
 				<ul class= "menu">
 					<li> <a href="<c:url value="/bet/bet"/>">Ставки</a>
 					<li> <a href="<c:url value="/privateRoom/"/>">Личный кабинет</a>
+					<li><a href="<c:url value="/logout"/>">Выход</a>
 				</ul>
 			</nav>				
 		</header>
@@ -25,17 +26,38 @@
 				 <tr>
 					 <th>МАТЧИ</th>
 					 <th>СТАТУС</th>
+					 <th>Счет</th>
+					 <th>Выбор</th>
 					 <th>КОЭФФИЦИЕНТ</th>
 					 <th>СУММА</th>
 					 <th>ВЫИГРЫШ</th>
 				</tr>
 				<c:forEach var="bet" items="${betList}">
 				<tr id="row_${bet.match.id}">
-					 <td>${bet.match.toString()}</td>
+					<td>${bet.match.toString()}</td>
 					<td>${bet.match.status}</td>
-					 <td>${bet.winCoefficient}</td>
-					 <td>${bet.amount}</td>
-					 <td>${bet.winAmount}</td>
+					<c:choose>
+						<c:when test="${bet.match.isFinished()}">
+							<td>${bet.match.homeGoals} - ${bet.match.guestGoals}</td>
+						</c:when>
+						<c:otherwise>
+							<td> - </td>
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${bet.getGoal() == 0}">
+							<td>${bet.match.homeClub.name}</td>
+						</c:when>
+						<c:when test="${bet.getGoal() == 2}">
+							<td>${bet.match.guestClub.name}</td>
+						</c:when>
+						<c:otherwise>
+							<td>Ничья</td>
+						</c:otherwise>
+					</c:choose>
+					<td>${bet.winCoefficient}</td>
+					<td>${bet.amount}</td>
+					<td>${bet.winAmount}</td>
 				</tr>
 				</c:forEach>
 			</table>

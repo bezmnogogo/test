@@ -43,16 +43,20 @@ public class BetController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/bet")
     public String bets(@AuthenticationPrincipal User user, ModelMap model,HttpServletRequest request){
+        if(user == null) {
+            return "error";
+        }
         model.addAttribute("matchList", matchService.getMatchesByStatus(false));
         String s = request.getParameter("id");
         Set<Role> roles = user.getRoles();
         for (Role role: roles) {
             if(role.getType().toString() == "admin")
-                return "AdminBetPage";
+                return "AdminBetPage";     //админ рандомит счет
         }
-        return "BetPage";
+        return "BetPage"; //страница ставок для пользователя
     }
 
+    //принимает форму со ставкой пользователя
     @RequestMapping(method = RequestMethod.POST, value = "/getId")
     public String bet(@AuthenticationPrincipal User user, ModelMap model, HttpServletRequest request){
         //String id = request.getParameter("id");
@@ -106,8 +110,10 @@ public class BetController {
         match.setFinished(true);
         List<Bet> bets = betsService.getBetsByMatchId(match.getId());
         for (Bet bet: bets) {
-            if(bet.getGoal() == match.getResult())
-                bet.setWinAmount(bet.getWinCoefficient()*bet.getAmount());
+            if(bet.getGoal() == match.getResult()) {
+                bet.setWinAmount(bet.getWinCoefficient() * bet.getAmount());
+                bet.addWinMoneyToUser(bet.getWinAmount());
+            }
             else bet.setWinAmount(0);
             betsService.makeBet(bet);
         }
@@ -126,5 +132,12 @@ public class BetController {
         }
         model.addAttribute("betList", bets);
         return "result";
+    }
+
+    @RequestMapping(value = "/allBets", method = RequestMethod.GET)
+    public String allBets(@AuthenticationPrincipal User user, ModelMap model){
+        model.addAttribute("betList",betsService.getAllBets());
+        model.addAttribute("amount", user.getCash());
+        return "allBets";
     }
 }

@@ -4,9 +4,8 @@ body{
 
 
 .header{
-	background-size:1900px 800px;
 	background: url("/resources/css/image/mainback.png");
-	width: 1900px;
+	width: 100%;
 	height: 800px;
 	float:left;
 }
@@ -38,7 +37,7 @@ header .menu a{
 }
 
 header.menu{
-	width:1900px;
+	width:100%;
 	height:100px;
 }
 
@@ -63,7 +62,7 @@ h1{
 }
 
 .sidebar{
-	width:1500px;
+	width:100%;
 	height:300px;
 	margin-left:250px;
 	margin-top:150px;
@@ -169,7 +168,7 @@ footer a{
 }
 
 .avtorfoot{
-	width:1900px;
+	width:100%;
 	height:50px;
 	background-color:#FF744B;
 	float:left;

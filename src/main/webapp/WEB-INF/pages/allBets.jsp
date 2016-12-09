@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: home
-  Date: 27.06.16
-  Time: 23:00
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -12,8 +5,10 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-    <title>Title</title>
-    <link rel="stylesheet" href="<c:url value="/resources/css/result.css"/>"/>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="<c:url value="/resources/css/privateroom.css"/>"/>
 </head>
 <body>
 <header class="clearfix" id="header">
@@ -25,32 +20,29 @@
         </ul>
     </nav>
 </header>
-<div class="result"><h1>РЕЗУЛЬТАТЫ</h1></div>
+<h1>Это Ваш личный кабинет, ${login}</h1>
 <table class="tablerate" id="table rate">
     <caption>Мои ставки</caption>
     <tr>
-        <th>МАТЧ</th>
-        <th>СЧЕТ</th>
+        <th>МАТЧИ</th>
+        <th>СТАТУС</th>
         <th>КОЭФФИЦИЕНТ</th>
         <th>СУММА</th>
         <th>ВЫИГРЫШ</th>
     </tr>
     <c:forEach var="bet" items="${betList}">
-    <tr id="${bet.id}">
-        <td>${bet.match.toString()}</td>
-        <td>${bet.match.homeGoals} - ${bet.match.guestGoals}</td>
-        <td>${bet.winCoefficient}</td>
-        <td>${bet.amount}</td>
-        <td>${bet.winAmount}</td>
-    </tr>
+        <tr id="row_${bet.match.id}">
+            <td>${bet.match.toString()}</td>
+            <td>${bet.match.status}</td>
+            <td>${bet.winCoefficient}</td>
+            <td>${bet.amount}</td>
+            <td>${bet.winAmount}</td>
+        </tr>
     </c:forEach>
 </table>
 <table class="tablepurse" id="table purse">
     <tr>
-        <td>Номер web - кошелька</td><td>0000 0000 0000</td>
-    </tr>
-    <tr>
-        <td>Номер карточки</td><td>0000 0000 0000</td>
+        <td>кол-во оставшихся средств милостивый администратор:</td><td>${amount}</td>
     </tr>
 </table>
 <footer class = "clearfix" id = "footer">
@@ -61,7 +53,7 @@
                 <ul class = "menu">
                     <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
                     <li><a href="<c:url value="/bet/bet"/>">Мои ставки</a></li>
-                    <li><a href=" ">Инструкция</a></li>
+                    <li><a href="<c:url value="/"/>">Инструкция</a></li>
                 </ul>
             </nav>
         </div>
@@ -85,6 +77,7 @@
         <p>©2016 Stavki.by</p>
     </div>
 </footer>
-
 </body>
 </html>
+
+

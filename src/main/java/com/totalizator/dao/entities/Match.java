@@ -12,13 +12,13 @@ import java.util.Set;
 public class Match extends GenericEntity {
 
     @Column(name = "homeClubWinCoefficient", nullable = false)
-    private float homeClubWinCoefficient;
+    private float homeClubWinCoefficient = 2;
 
     @Column(name = "guestClubWinCoefficient", nullable = false)
-    private float guestClubWinCoefficient;
+    private float guestClubWinCoefficient = 2;
 
     @Column(name = "drawCoeffficient", nullable = false)
-    private float drawCoeffficient;
+    private float drawCoeffficient = 2;
 
     public Set<Bet> getBets() {
         return bets;
@@ -37,10 +37,10 @@ public class Match extends GenericEntity {
     private Date date;
 
     @Column(name = "popularity", nullable = false)
-    private long popularity;
+    private long popularity = 4;
 
     @Column(name = "finished", nullable = false)
-    private boolean finished;
+    private boolean finished = false;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "homeClub")
@@ -84,13 +84,13 @@ public class Match extends GenericEntity {
     }
 
     @Column(name = "result", nullable = false)
-    private long result;
+    private long result = 0;
 
-    public Club getTournament() {
+    public Tournament getTournament() {
         return tournament;
     }
 
-    public void setTournament(Club tournament) {
+    public void setTournament(Tournament tournament) {
         this.tournament = tournament;
     }
 
@@ -160,7 +160,7 @@ public class Match extends GenericEntity {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "tournament")
-    private Club tournament;
+    private Tournament tournament;
 
     public String getStatus(){
         if(this.finished == true) return "Окончен";

@@ -101,4 +101,8 @@ public class Bet extends GenericEntity {
     public void setWin(boolean win) {
         this.win = win;
     }
+
+    public void addWinMoneyToUser(float money){
+        this.user.addCash(money);
+    }
 }

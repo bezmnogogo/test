@@ -7,8 +7,8 @@
 	 <head>
 		<meta charset="utf-8">
 		<title></title>
-			<link href='https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:700' rel='stylesheet' type='text/css'>
+		<%--	<link href='https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:700' rel='stylesheet' type='text/css'>--%>
 		 <link rel="stylesheet" href="<c:url value="/resources/css/BetStyle.css"/>"/>
 	</head>
 	<body>

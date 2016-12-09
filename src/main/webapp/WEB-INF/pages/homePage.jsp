@@ -7,12 +7,14 @@
 	 <head>
 		 <meta charset="utf-8">
 		 <title>home page</title>
-		 <link href='https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
-		 <link href='https://fonts.googleapis.com/css?family=Droid+Serif:700' rel='stylesheet' type='text/css'>
+		 <style>
+			 body{background: darkgray;
+			 background-image: url('/resources/css/image/mainback.png');}
+		 </style>
 		 <link rel="stylesheet" href="<c:url value="/resources/css/FirstPageStyle2.css"/>"/>
 	</head>
 	<body>
-		<header class="clearfix" id="header" style="background: url('/resources/css/image/mainback.png')">
+		<header class="clearfix" id="header">
 			<a class="logo" href=" "></a>
 			<nav class="clearfix" id="hdmenu">
 				<ul class="menu">
@@ -35,7 +37,7 @@
 				<ul class="menu">
 					<li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
 					<li><a href="<c:url value="/bet/bet"/>">Мои ставки</a></li>
-					<li><a href="<c:url value="/"/>">Инструкция</a></li>
+					<li><a href="<c:url value="/bet/allBets"/>">Инструкция</a></li>
 				</ul>	
 			</nav>
 			<div class="contacts clearfix">

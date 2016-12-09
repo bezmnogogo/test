@@ -28,6 +28,7 @@ public class PrivateRoomController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String room(@AuthenticationPrincipal User curUser, ModelMap model){
+        if(curUser == null) return "error";
         model.addAttribute("betList",betsService.getBetsByUserId(curUser.getId()));
         model.addAttribute("login", curUser.getUsername());
         model.addAttribute("amount", curUser.getCash());

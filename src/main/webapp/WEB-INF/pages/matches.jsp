@@ -1,67 +1,72 @@
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
-<head>
-    <title>Title: ${message}</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-</head>
-<body>
-<div class="container">
-    <div class="row">
-        Test forn git
-    </div>
-    <div class="row">
-        <a class="button" href="<c:url value="/messages/" />">go to messages</a>
-    </div>
-</div>
-</body>
-</html>--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
-
-<tiles:insertDefinition name="defaultLayout">
-    <tiles:putAttribute name="title">
-        Home
-    </tiles:putAttribute>
-
-    <tiles:putAttribute name="scripts">
-        <script>
-            var wsUrl = "<c:url value="/ws"/>"
-            var applicationContext = "<c:url value="/"/>"
-
-
-        </script>
-    </tiles:putAttribute>
-
-    <tiles:putAttribute name="body">
-        <div class="row">
-            <input type="text" id="messageText" />
-            <input type="button" id="addMessage" value="addMessage">
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <%--<link href='https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:700' rel='stylesheet' type='text/css'>--%>
+    <link rel="stylesheet" href="<c:url value="/resources/css/BetStyle.css"/>"/>
+</head>
+<body>
+<div id="wrapper">
+        <header class="clearfix" id="header">
+            <div class="logo" href=" "></div>
+            <nav class="clearfix" id="hdmenu">
+                <ul class= "menu">
+                    <li><a href="<c:url value="/bet/bet"/>">Ставки</a></li>
+                    <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
+                    <li><a href="<c:url value="/logout"/>">Выход</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="sidebar">
         </div>
-        <div class="row">
-            <table id="messageTable" class="table table-hover">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Text</th>
-                    <th>Del</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach var="club" items="${clubList}">
-                    <tr id="row_${club.id}">
-                        <th scope="row">${club.nation.name}</th>
-                        <td>${club.sport.name} популярность ${club.name} = ${club.popularity}</td>
-                        <td><input type='button' class='delete-message' value='delete' data-messageid='${message.id}'/></td>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
+        <div class="content">
+            <h2><p>Админ, добавь матч. Это как-никак твоя работа. ${message}</p></h2>
+            <div class="matchs">
+                <table >
+                        <form role="form" method="post" action="<c:url value="/match/add" /> ">
+                            <tr id="row">
+                                <td><input type="text" name="date"></td>
+                                <td><input type="text" name="homeClub"></td>
+                                <td><input type="text" name="guestClub"></td>
+                                <td><button type="submit">добавить матч</button></td>
+                            </tr>
+                        </form>
+                </table>
+            </div>
         </div>
-    </tiles:putAttribute>
-</tiles:insertDefinition>
+</div>
+<footer class="clearfix" id="footer">
+    <nav>
+        <ul class="menu">
+            <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
+            <li><a href="<c:url value="/bet/bet"/>">Мои ставки</a></li>
+            <li><a href="<c:url value="/"/>">Инструкция</a></li>
+        </ul>
+    </nav>
+    <div class="contacts clearfix">
+        <div class="telephone">
+            <img src="CSS/image/iconphone.png" height="80px"; width="70px"><br>
+            <p>Телефон</p>
+            <a><i>+375(29)000-000-000</i></a>
+        </div>
+        <div class="address">
+            <img src="CSS/image/iconadress.png" height="80px"; width="70px"><br>
+            <p>Адрес</p>
+            <p>Гикало 9 Минск</p>
+        </div>
+        <div class="email">
+            <img src="CSS/image/iconmap.png" height="80px"; width="70px"><br>
+            <p>Email</p>
+            <a href=" ">stavki@gmail.com</a>
+        </div>
+    </div>
+    <div class="avtorfoot"><p>@2016 Stavki.by</p></div>
+</footer>
+</body>
+</html>
