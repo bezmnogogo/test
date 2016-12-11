@@ -21,3 +21,20 @@ INSERT INTO clubs (`id`, `Name`, `Nation`, `Popularity`, `Sport`) VALUES ('2', '
 INSERT INTO clubs (`id`, `Name`, `Nation`, `Popularity`, `Sport`) VALUES ('3', 'Spartak', '1', '6', '1');
 
 INSERT INTO clubs (`id`, `Name`, `Nation`, `Popularity`, `Sport`) VALUES ('4', 'Rubin', '1', '6', '1');
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `updateMatch`(in matchId bigint(20), in homeGoal bigint(20), in guestGoal bigint(20), in finish bit, in result1 bigint(20))
+BEGIN
+update totalizator_db.match set homeGoals=homeGoal where id=matchId;
+update totalizator_db.match set guestGoals=guestGoal where id=matchId;
+update totalizator_db.match set finished=finish where id=matchId;
+update totalizator_db.match set result=result1 where id=matchId;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `updateUserCash`(in userId bigint(20), in userCash float)
+BEGIN
+update users set cash = cash + userCash where id = userId;
+END$$
+DELIMITER ;
