@@ -31,37 +31,37 @@
     </form>
     <div class="buttonRegistration"><a href="<c:url value="/registration"/> "><input type="submit" value="Регистрация" required/></a> </div>
 </div>
-    <footer class = "clearfix" id = "footer">
+<footer class = "clearfix" id = "footer">
 
-        <div class="contacts">
-            <div class="navigation">
-                <nav class="navigation">
-                    <ul class = "menu">
-                        <li><a href=" ">Результаты</a></li>
-                        <li><a href=" ">Мои ставки</a></li>
-                        <li><a href=" ">Инструкция</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class = "telephone">
-                <img src="Image/Icons/iconphone.png"><br>
-                <b>Телефон</b>
-                <p>+375(29)000-000-000</p>
-            </div>
-            <div class="adress">
-                <img src="Image/Icons/iconadress.png" ><br>
-                <b>Адрес</b>
-                <p>Гикало 9, Минск</p>
-            </div>
-            <div class = "email">
-                <img src="Image/Icons/iconmap.png" ><br>
-                <b>Email</b>
-                <p>stavki@gmail.com</p>
-            </div>
+    <div class="contacts">
+        <div class="navigation">
+            <nav class="navigation">
+                <ul class = "menu">
+                    <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
+                    <li><a href="<c:url value="/bet/bet"/>">Сделать ставку</a></li>
+                    <li><a href="<c:url value="/"/>">Инструкция</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="avtorfoot">
-            <p>©2016 Stavki.by</p>
+        <div class = "telephone">
+            <img src="../../resources/image/iconphone.png"><br>
+            <b>Телефон</b>
+            <p>+375(29)000-000-000</p>
         </div>
-    </footer>
+        <div class="adress">
+            <img src="../../resources/image/iconadress.png" ><br>
+            <b>Адрес</b>
+            <p>Гикало 9, Минск</p>
+        </div>
+        <div class = "email">
+            <img src="../../resources/image/iconmap.png" ><br>
+            <b>Email</b>
+            <p>stavki@gmail.com</p>
+        </div>
+    </div>
+    <div class="avtorfoot">
+        <p>©2016 Stavki.by</p>
+    </div>
+</footer>
 </body>
 </html>

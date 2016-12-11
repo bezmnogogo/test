@@ -9,59 +9,59 @@
     <title></title>
     <%--<link href='https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic,latin-ext' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:700' rel='stylesheet' type='text/css'>--%>
-    <link rel="stylesheet" href="<c:url value="/resources/css/BetStyle.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="../../resources/css/BetStyle.css"/>"/>
 </head>
 <body>
 <div id="wrapper">
-        <header class="clearfix" id="header">
-            <div class="logo" href=" "></div>
-            <nav class="clearfix" id="hdmenu">
-                <ul class= "menu">
-                    <li><a href="<c:url value="/bet/bet"/>">Ставки</a></li>
-                    <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
-                    <li><a href="<c:url value="/logout"/>">Выход</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="sidebar">
+    <header class="clearfix" id="header">
+        <div class="logo" href=" "></div>
+        <nav class="clearfix" id="hdmenu">
+            <ul class= "menu">
+                <li><a href="<c:url value="/bet/bet"/>">Ставки</a></li>
+                <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
+                <li><a href="<c:url value="/logout"/>">Выход</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="sidebar">
+    </div>
+    <div class="content">
+        <h2><p>Админ, добавь матч. Это как-никак твоя работа. ${message}</p></h2>
+        <div class="matchs">
+            <table >
+                <form role="form" method="post" action="<c:url value="/match/add" /> ">
+                    <tr id="row">
+                        <td><input type="text" name="date" class="for_input"></td>
+                        <td><input type="text" name="homeClub" class="for_input" ></td>
+                        <td><input type="text" name="guestClub" class="for_input"></td>
+                        <td><button type="submit" class="bet_submit">добавить матч</button></td>
+                    </tr>
+                </form>
+            </table>
         </div>
-        <div class="content">
-            <h2><p>Админ, добавь матч. Это как-никак твоя работа. ${message}</p></h2>
-            <div class="matchs">
-                <table >
-                        <form role="form" method="post" action="<c:url value="/match/add" /> ">
-                            <tr id="row">
-                                <td><input type="text" name="date"></td>
-                                <td><input type="text" name="homeClub"></td>
-                                <td><input type="text" name="guestClub"></td>
-                                <td><button type="submit">добавить матч</button></td>
-                            </tr>
-                        </form>
-                </table>
-            </div>
-        </div>
+    </div>
 </div>
 <footer class="clearfix" id="footer">
     <nav>
         <ul class="menu">
             <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
-            <li><a href="<c:url value="/bet/bet"/>">Мои ставки</a></li>
+            <li><a href="<c:url value="/bet/bet"/>">Закончить матч</a></li>
             <li><a href="<c:url value="/"/>">Инструкция</a></li>
         </ul>
     </nav>
     <div class="contacts clearfix">
         <div class="telephone">
-            <img src="CSS/image/iconphone.png" height="80px"; width="70px"><br>
+            <img src="../../resources/image/iconphone.png" height="80px"; width="70px"><br>
             <p>Телефон</p>
             <a><i>+375(29)000-000-000</i></a>
         </div>
         <div class="address">
-            <img src="CSS/image/iconadress.png" height="80px"; width="70px"><br>
+            <img src="../../resources/image/iconadress.png" height="80px"; width="70px"><br>
             <p>Адрес</p>
             <p>Гикало 9 Минск</p>
         </div>
         <div class="email">
-            <img src="CSS/image/iconmap.png" height="80px"; width="70px"><br>
+            <img src="../../resources/image/iconmap.png" height="80px"; width="70px"><br>
             <p>Email</p>
             <a href=" ">stavki@gmail.com</a>
         </div>

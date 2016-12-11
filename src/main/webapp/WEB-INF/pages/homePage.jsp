@@ -7,12 +7,8 @@
 	 <head>
 		 <meta charset="utf-8">
 		 <title>home page</title>
-		 <style>
-			 body{background: darkgray;
-			 background-image: url('/resources/css/image/mainback.png');}
-		 </style>
-		 <link rel="stylesheet" href="<c:url value="/resources/css/FirstPageStyle2.css"/>"/>
-	</head>
+		 <link rel="stylesheet" href="<c:url value="../../resources/css/FirstPageStyle2.css"/>"/>
+	 </head>
 	<body>
 		<header class="clearfix" id="header">
 			<a class="logo" href=" "></a>
@@ -21,9 +17,11 @@
 					<c:if test="${not empty login}">
 						<li><a href="<c:url value="/privateRoom/"/>">Личный кабинет</a> </li>
 					</c:if>
-							<li><a href="<c:url value="/registration"/>">Регистрация</a></li>
+					<c:if test="${empty login}">
+						<li><a href="<c:url value="/registration"/>">Регистрация</a></li>
+					</c:if>
 						   <li><a href="<c:url value="/login"/>">${status}<span style="color:blue">${login}</span></a></li>
-				</ul>	
+				</ul>
 			</nav>
 			<h1>СТАВКИ НА СПОРТ</h1>
 			<div class="sidebar clearfix" id="sidebar">
@@ -36,23 +34,23 @@
 			<nav>
 				<ul class="menu">
 					<li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
-					<li><a href="<c:url value="/bet/bet"/>">Мои ставки</a></li>
+					<li><a href="<c:url value="/bet/bet"/>">Сделать ставку</a></li>
 					<li><a href="<c:url value="/bet/allBets"/>">Инструкция</a></li>
-				</ul>	
+				</ul>
 			</nav>
 			<div class="contacts clearfix">
 				<div class="telephone">
-				    <img src="image/iconphone.png" height="80px"; width="70px"><br>
+				    <img src="../../resources/image/iconphone.png" height="80px"; width="70px"><br>
 					<p>Телефон</p>
 					<a><i>+375(29)000-000-000</i></a>
 				</div>
 				<div class="address">
-					<img src="image/iconadress.png" height="80px"; width="70px"><br>
+					<img src="../../resources/image/iconadress.png"  height="80px"; width="70px"><br>
 					<p>Адрес</p>
 					<p>Гикало 9 Минск</p>
 				</div>
 				<div class="email">
-					<img src="image/iconmap.png" height="80px"; width="70px"><br>
+					<img src="../../resources/image/iconmap.png" height="80px"; width="70px"><br>
 					<p>Email</p>
 					<a href=" ">stavki@gmail.com</a>
 				</div>

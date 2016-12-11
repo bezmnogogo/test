@@ -84,10 +84,10 @@ form{
 }
 
 .matchs{
-	width:950px;
+	width:1126px;
 	height:290px;
 	/*border:2px solid black;*/
-	margin-left:190px;
+	margin-left:4px;
 	margin-top:130px;
 	overflow:auto;
 }
@@ -263,4 +263,38 @@ footer a{
 	display:block;
 	clear:both;
 	height:0;
+}
+
+.bet_submit{
+	background-color: #FF744B;
+	width: 142px;
+	height:49px;
+	border-radius: 25px;
+
+}
+
+.bet_amount{
+	background-color: #FF744B;
+    border-radius: 25px;
+    height: 47px;
+    width: 163px;
+    font-size: 34px;
+    text-align: center;
+}
+
+.for_input{
+	background-color: #FF744B;
+    width: 188px;
+    height: 49px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 31px;
+}
+
+td{
+	width:180px;
+}
+
+td:last-child{
+	width:142px;
 }

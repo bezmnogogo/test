@@ -16,4 +16,6 @@ public interface IMatchService {
     Match saveMatch(Match match);
 
     List<Match> getMatchesByStatus(boolean finished);
+
+    void updateMatch(long id, long homeGoal, long guestGoal, boolean finish, long result1);
 }

@@ -14,8 +14,8 @@
 <header class="clearfix" id="header">
     <nav class="clearfix" id="hdmenu">
         <ul class= "menu">
-            <li> <a href="<c:url value="/bet/bet"/>">Ставки</a>
-            <li> <a href="<c:url value="/privateRoom/"/>">Личный кабинет</a>
+            <li> <a href="<c:url value="/match/"/>">добавить матч</a>
+            <li> <a href="<c:url value="/bet/bet"/>">Закончить матч</a>
             <li><a href="<c:url value="/logout"/>">Выход</a></li>
         </ul>
     </nav>
@@ -29,6 +29,7 @@
         <th>КОЭФФИЦИЕНТ</th>
         <th>СУММА</th>
         <th>ВЫИГРЫШ</th>
+        <th>e-mail пользователя</th>
     </tr>
     <c:forEach var="bet" items="${betList}">
         <tr id="row_${bet.match.id}">
@@ -37,6 +38,7 @@
             <td>${bet.winCoefficient}</td>
             <td>${bet.amount}</td>
             <td>${bet.winAmount}</td>
+            <td>${bet.user.getMail()}</td>
         </tr>
     </c:forEach>
 </table>
@@ -52,25 +54,25 @@
             <nav class="navigation">
                 <ul class = "menu">
                     <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
-                    <li><a href="<c:url value="/bet/bet"/>">Мои ставки</a></li>
+                    <li><a href="<c:url value="/bet/bet"/>">Сделать ставку</a></li>
                     <li><a href="<c:url value="/"/>">Инструкция</a></li>
                 </ul>
             </nav>
         </div>
-        <div class = "telephone">
-            <img src="Image/Icons/iconphone.png"><br>
-            <b>Телефон</b>
-            <p>+375(29)000-000-000</p>
+        <div class="telephone">
+            <img src="../../resources/image/iconphone.png" height="80px"; width="70px"><br>
+            <p>Телефон</p>
+            <a><i>+375(29)000-000-000</i></a>
         </div>
-        <div class="adress">
-            <img src="Image/Icons/iconadress.png" ><br>
-            <b>Адрес</b>
-            <p>Гикало 9, Минск</p>
+        <div class="address">
+            <img src="../../resources/image/iconadress.png" height="80px"; width="70px"><br>
+            <p>Адрес</p>
+            <p>Гикало 9 Минск</p>
         </div>
-        <div class = "email">
-            <img src="Image/Icons/iconmap.png" ><br>
-            <b>Email</b>
-            <p>stavki@gmail.com</p>
+        <div class="email">
+            <img src="../../resources/image/iconmap.png" height="80px"; width="70px"><br>
+            <p>Email</p>
+            <a href=" ">stavki@gmail.com</a>
         </div>
     </div>
     <div class="avtorfoot">

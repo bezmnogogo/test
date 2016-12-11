@@ -93,6 +93,11 @@ public class HomeController {
             model.addAttribute("message", message);
             return "/registration";
         }
+        if(userService.checkIfUserExists(user.getUsername())){
+            String message = "this login is already exist. Please fix it";
+            model.addAttribute("message", message);
+            return "/registration";
+        }
         userService.setUserRole(user);
         User usr = userService.saveUser(user);
 
