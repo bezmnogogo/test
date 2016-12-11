@@ -112,12 +112,14 @@ public class BetController {
         for (Bet bet: bets) {
             if(bet.getGoal() == match.getResult()) {
                 bet.setWinAmount(bet.getWinCoefficient() * bet.getAmount());
-                bet.addWinMoneyToUser(bet.getWinAmount());
+                //bet.addWinMoneyToUser(bet.getWinAmount());
+                userService.updateCash(bet.getUser().getId(), bet.getWinAmount());
             }
             else bet.setWinAmount(0);
             betsService.makeBet(bet);
         }
-        Match match1 = matchService.saveMatch(match);
+        //Match match1 = matchService.saveMatch(match);
+        matchService.updateMatch(match.getId(), match.getHomeGoals(),match.getGuestGoals(), match.isFinished(), match.getResult());
         model.addAttribute(matchService.getMatchesByStatus(false));
         return "AdminBetPage";
     }
@@ -138,6 +140,7 @@ public class BetController {
     public String allBets(@AuthenticationPrincipal User user, ModelMap model){
         model.addAttribute("betList",betsService.getAllBets());
         model.addAttribute("amount", user.getCash());
+        model.addAttribute("login", user.getUsername());
         return "allBets";
     }
 }

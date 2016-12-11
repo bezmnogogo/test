@@ -14,7 +14,7 @@
 		<header class="clearfix" id="header">
 			<nav class="clearfix" id="hdmenu">
 				<ul class= "menu">
-					<li> <a href="<c:url value="/bet/bet"/>">Ставки</a>
+					<li> <a href="<c:url value="/bet/bet"/>">Сделать ставку</a>
 					<li> <a href="<c:url value="/privateRoom/"/>">Личный кабинет</a>
 					<li><a href="<c:url value="/logout"/>">Выход</a>
 				</ul>
@@ -70,37 +70,37 @@
 				 </tr>
 			</table>
 		<footer class = "clearfix" id = "footer">
-			
-			 <div class="contacts">
+
+			<div class="contacts">
 				<div class="navigation">
 					<nav class="navigation">
 						<ul class = "menu">
-						   <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
-						   <li><a href="<c:url value="/bet/bet"/>">Мои ставки</a></li>
-						   <li><a href="<c:url value="/"/>">Инструкция</a></li>
+							<li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
+							<li><a href="<c:url value="/bet/bet"/>">Сделать ставку</a></li>
+							<li><a href="<c:url value="/"/>">Инструкция</a></li>
 						</ul>
 					</nav>
 				</div>
-				 <div class = "telephone">
-					<img src="Image/Icons/iconphone.png"><br>
+				<div class = "telephone">
+					<img src="../../resources/image/iconphone.png"><br>
 					<b>Телефон</b>
 					<p>+375(29)000-000-000</p>
-				 </div>         
+				</div>
 				<div class="adress">
-				   <img src="Image/Icons/iconadress.png" ><br>
-				   <b>Адрес</b>
-				   <p>Гикало 9, Минск</p>
+					<img src="../../resources/image/iconadress.png" ><br>
+					<b>Адрес</b>
+					<p>Гикало 9, Минск</p>
 				</div>
 				<div class = "email">
-				   <img src="Image/Icons/iconmap.png" ><br>
-				   <b>Email</b>
-				   <p>stavki@gmail.com</p>
+					<img src="../../resources/image/iconmap.png" ><br>
+					<b>Email</b>
+					<p>stavki@gmail.com</p>
 				</div>
-			 </div>
+			</div>
 			<div class="avtorfoot">
 				<p>©2016 Stavki.by</p>
 			</div>
-        </footer>
+		</footer>
 	</body>
 </html>
 	

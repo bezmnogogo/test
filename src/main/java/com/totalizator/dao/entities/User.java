@@ -13,6 +13,10 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "users")
+@NamedStoredProcedureQuery(name = "User.updateCash", procedureName = "updateUserCash", parameters = {
+		@StoredProcedureParameter(mode = ParameterMode.IN, name = "userId", type = Long.class),
+		@StoredProcedureParameter(mode = ParameterMode.IN, name = "userCash", type = Float.class)
+})
 public class User implements UserDetails {
 
 	@Id

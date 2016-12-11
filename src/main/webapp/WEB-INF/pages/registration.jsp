@@ -20,8 +20,6 @@
     <div class="logo" href=" "></div>
     <nav class="clearfix" id="hdmenu">
         <ul class= "menu">
-            <li><a href="<c:url value="/bet/bet"/>">Ставки</a></li>
-            <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
             <li><a href="<c:url value="/login"/>">Вход</a></li>
         </ul>
     </nav>
@@ -30,11 +28,11 @@
 <p>Вам нужно зарегистрироваться, чтобы начать делать ставки ${message}</p>
 <form class="m-t" role="form" method="post" action="<c:url value="/registration" /> ">
     <div align = "center"class = "formRegistration">
-        <div class="buttonName"><input type="text" placeholder="Имя" name = "username" required /></div>
+        <div class="buttonEmail"><input type="text" placeholder="Имя" name = "username" required /></div>
         <div class="buttonEmail"><input type="email" placeholder="Email" name = "mail" required /></div>
         <div class="buttonPassword"><input type="password" placeholder="Пароль" name = "password" required /></div>
-        <div class="buttonPay"><input type="text" placeholder="Web - кошелек" name = "webPurse" required /></div>
-        <button type="submit" class="btn btn-primary block full-width m-b">Registrate</button>
+        <div class="buttonEmail"><input type="text" placeholder="Web - кошелек" name = "webPurse" required /></div>
+        <div class="buttonLogin"><input type="submit" placeholder="Регистрация" ></input></div>
     </div>
 </form>
 <footer class = "clearfix" id = "footer">
@@ -43,24 +41,24 @@
         <div class="navigation">
             <nav class="navigation">
                 <ul class = "menu">
-                    <li><a href="<c:url value="/bet/results" />">Результаты</a></li>
-                    <li><a href="<c:url value="/bet/bet" />">Мои ставки</a></li>
-                    <li><a href=" ">Инструкция</a></li>
+                    <li><a href="<c:url value="/bet/results"/>">Результаты</a></li>
+                    <li><a href="<c:url value="/bet/bet"/>">Сделать ставку</a></li>
+                    <li><a href="<c:url value="/"/>">Инструкция</a></li>
                 </ul>
             </nav>
         </div>
         <div class = "telephone">
-            <img src="image/iconphone.png"><br>
+            <img src="../../resources/image/iconphone.png"><br>
             <b>Телефон</b>
             <p>+375(29)000-000-000</p>
         </div>
         <div class="adress">
-            <img src="image/iconadress.png" ><br>
+            <img src="../../resources/image/iconadress.png" ><br>
             <b>Адрес</b>
             <p>Гикало 9, Минск</p>
         </div>
         <div class = "email">
-            <img src="image/iconmap.png" ><br>
+            <img src="../../resources/image/iconmap.png" ><br>
             <b>Email</b>
             <p>stavki@gmail.com</p>
         </div>

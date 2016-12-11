@@ -9,6 +9,13 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "match")
+@NamedStoredProcedureQuery(name = "Match.updateMatch", procedureName = "updateMatch", parameters = {
+        @StoredProcedureParameter(mode = ParameterMode.IN, name = "matchId", type = Long.class),
+        @StoredProcedureParameter(mode = ParameterMode.IN, name = "homeGoal", type = Long.class),
+        @StoredProcedureParameter(mode = ParameterMode.IN, name = "guestGoal", type = Long.class),
+        @StoredProcedureParameter(mode = ParameterMode.IN, name = "finish", type = Boolean.class),
+        @StoredProcedureParameter(mode = ParameterMode.IN, name = "result1", type = Long.class)
+})
 public class Match extends GenericEntity {
 
     @Column(name = "homeClubWinCoefficient", nullable = false)

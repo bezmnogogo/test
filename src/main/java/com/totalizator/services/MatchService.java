@@ -42,4 +42,9 @@ public class MatchService implements IMatchService {
     public List<Match> getMatchesByStatus(boolean finished) {
         return matchRepository.getMatchesByStatus(finished);
     }
+
+    @Override
+    public void updateMatch(long id, long homeGoal, long guestGoal, boolean finish, long result1) {
+        matchRepository.updateMatch(id, homeGoal, guestGoal, finish,result1);
+    }
 }

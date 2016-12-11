@@ -63,6 +63,11 @@ public class UserService implements IUserService {
 	}
 
 	@Override
+	public void updateCash(long id, float cash) {
+		userRepository.updateCash(id, cash);
+	}
+
+	@Override
 	@Transactional
 	public User saveUser(User user) {
 		return userRepository.save(user);

@@ -73,4 +73,6 @@ public interface IUserService {
 
 	@Cacheable(value = "DataCache", key = "'UserService_' + #root.methodName + '_' + #mail")
 	boolean checkIfMailExists(String mail);
+
+	void updateCash(long id, float cash);
 }
